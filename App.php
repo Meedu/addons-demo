@@ -1,18 +1,24 @@
 <?php
 
+/*
+ * This file is part of the Qsnh/meedu.
+ *
+ * (c) XiaoTeng <616896861@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 namespace Addons\AddonsDemo;
 
-
-use Addons\AddonsDemo\Constant\Constant;
 use Addons\AddonsDemo\Models\Blog;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Artisan;
+use Addons\AddonsDemo\Constant\Constant;
 
 class App
 {
-
     public static function install()
     {
         Artisan::call('migrate', ['--path' => base_path('/addons/' . Constant::APP_SIGN . '/databases/migrations'), '--realpath' => true, '--force' => true]);
@@ -46,5 +52,4 @@ class App
     {
         Artisan::call('migrate', ['--path' => base_path('/addons/' . Constant::APP_SIGN . '/databases/migrations'), '--realpath' => true, '--force' => true]);
     }
-
 }

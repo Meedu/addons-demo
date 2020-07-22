@@ -1,17 +1,24 @@
 <?php
 
+/*
+ * This file is part of the Qsnh/meedu.
+ *
+ * (c) XiaoTeng <616896861@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 namespace Addons\AddonsDemo;
 
-use Addons\AddonsDemo\Commands\AppCommand;
-use Addons\AddonsDemo\Constant\Constant;
-use Addons\AddonsDemo\Listeners\LoginListener;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
+use Addons\AddonsDemo\Constant\Constant;
+use Addons\AddonsDemo\Commands\AppCommand;
+use Addons\AddonsDemo\Listeners\LoginListener;
 
 class MainServiceProvider extends ServiceProvider
 {
-
     protected $listen = [
         'App\Events\UserLoginEvent' => [
             LoginListener::class,
@@ -42,5 +49,4 @@ class MainServiceProvider extends ServiceProvider
     public function register()
     {
     }
-
 }
